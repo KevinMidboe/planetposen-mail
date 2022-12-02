@@ -20,6 +20,11 @@ server:
 	export GO111MODULE="on"; \
 	go run -race cmd/server/main.go
 
+## preview: runs preview of mail template
+preview:
+	export GO111MODULE="on"; \
+        go run cmd/preview/main.go
+
 ## modd: Monitors the directory, and recompiles your app every time a file changes. Also runs tests.
 ## (To install modd, run: go get github.com/cortesi/modd/cmd/modd)
 modd:

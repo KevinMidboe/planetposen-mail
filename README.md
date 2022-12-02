@@ -27,3 +27,9 @@ or
 ```bash
 (sudo) docker run -d --name planetposen-mail -p 8000:8000 --env-file .env planetposen-mail
 ```
+
+## Preview
+Use view template as preview during local development run:
+```bash
+make preview
+```
