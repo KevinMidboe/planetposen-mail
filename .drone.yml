@@ -26,15 +26,12 @@ steps:
       tags: latest
     when:
       event:
-        include:
-          - push
-        exclude:
-          - pull_request
+        - push
       branch:
         - master
 
 ---
 kind: signature
-hmac: 92fdb188c7743e4b3c82a5cb8167abb86ab65508e03bf76273e1193692b439aa
+hmac: 80190c8ebd46a70ae4d3f5584a2d4e82ff3e2a376c209877f4c62a09a246dbc5
 
 ...
