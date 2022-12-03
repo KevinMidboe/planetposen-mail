@@ -22,7 +22,6 @@ func SendOrderConfirmation(s *sendgrid.Client) http.HandlerFunc {
 
 		err = s.SendOrderConfirmation(ctx, *mailData)
 		if err != nil {
-			fmt.Println(err)
 			handleError(w, err, "error from sendgrid ", http.StatusInternalServerError, true)
 			return
 		}
@@ -49,6 +48,18 @@ func getOrderConfirmationPayload(r *http.Request) (*mail.OrderConfirmationData, 
 	err := decoder.Decode(&payload)
 	if err != nil {
 		return nil, fmt.Errorf("decode: %w", err)
+	}
+
+	if payload.Email == "" {
+		return nil, fmt.Errorf("missing required email field")
+	}
+
+	if payload.OrderId == "" {
+		return nil, fmt.Errorf("missing required orderid field")
+	}
+
+	if len(payload.Products) == 0 {
+		return nil, fmt.Errorf("missing required products array")
 	}
 
 	return &payload, nil
