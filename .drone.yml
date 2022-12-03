@@ -32,3 +32,8 @@ steps:
           - pull_request
       branch:
         - master
+---
+kind: signature
+hmac: 87cd6f66ac6744af846db238f8956edcc02f4352e57b625003e9cb2025f14356
+
+...
