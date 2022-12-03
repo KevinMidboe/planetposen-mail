@@ -25,7 +25,7 @@ type ReceiptPageData struct {
 }
 
 func serveTemplate(response http.ResponseWriter, request *http.Request) {
-	tmpl := template.Must(template.ParseFiles("mail/mail-template_order-confirmation.html"))
+	tmpl := template.Must(template.ParseFiles("mail-templates/order-confirmation.html"))
 	// tmpl := template.Must(w)
 	data := ReceiptPageData{
 		PageTitle: "Planetposen purchase",

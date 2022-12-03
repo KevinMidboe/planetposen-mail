@@ -14,7 +14,7 @@ func buildOrderConfirmation(templateData EmailTemplateData) *OrderConfirmationEm
 		FromEmail: "noreply@kevm.dev",
 	}
 
-	tmpl := template.Must(template.ParseFiles("mail/mail-template_order-confirmation.html"))
+	tmpl := template.Must(template.ParseFiles("mail-templates/order-confirmation.html"))
 	b := new(strings.Builder)
 	err := tmpl.Execute(b, templateData)
 	if err != nil {
