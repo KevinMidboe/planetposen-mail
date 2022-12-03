@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: planetposen-mail build and publish
+name: Build and publish
 
 platform:
   os: linux
@@ -34,6 +34,6 @@ steps:
         - master
 ---
 kind: signature
-hmac: 87cd6f66ac6744af846db238f8956edcc02f4352e57b625003e9cb2025f14356
+hmac: e94e229e30a10b286ee178e2e2074febcd0f74b8cb424e18a188cbec0644b3d8
 
 ...
