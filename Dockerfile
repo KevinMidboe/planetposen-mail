@@ -1,7 +1,7 @@
 # Build the project
 FROM golang:1.19 as builder
 
-LABEL org.opencontainers.image.source="https://github.com/KevinMidboe/planetposen-mail.git"
+LABEL org.opencontainers.image.source="https://github.com/KevinMidboe/planetposen-mail"
 
 WORKDIR /go/src/github.com/kevinmidboe/planetposen-mail
 ADD . .
