@@ -32,8 +32,9 @@ steps:
           - pull_request
       branch:
         - master
+        - ci/build-and-publish
 ---
 kind: signature
-hmac: e94e229e30a10b286ee178e2e2074febcd0f74b8cb424e18a188cbec0644b3d8
+hmac: eee556e8996ea94ec3343c2fb342a2064917c4b8becf89c1625ef15bd84c4b9d
 
 ...
