@@ -28,20 +28,22 @@ func serveTemplate(response http.ResponseWriter, request *http.Request) {
 	tmpl := template.Must(template.ParseFiles("mail-templates/order-confirmation.html"))
 	// tmpl := template.Must(w)
 	data := ReceiptPageData{
-		PageTitle: "Planetposen purchase",
-		OrderId:   "fb9a5910-0dcf-4c65-9c25-3fb3eb883ce5",
+		PageTitle: "Ordrebekreftelse planetposen",
+		OrderId:   "k6z6wq2J_pFMBY78Sp0=",
 		Products: []Product{
-			{Name: "Forrest", Image: "https://planet.schleppe.cloud/email/items/item-1.jpg", Description: "Sneaker Maker", Quantity: 4, Price: 49.99, Currency: "NOK"},
-			{Name: "Cookie-Man Forrest", Image: "https://planet.schleppe.cloud/email/items/item-2.jpg", Description: "Boots Brothers", Quantity: 3, Price: 99, Currency: "NOK"},
+			{Name: "Forrest", Image: "https://storage.googleapis.com/planetposen-images/838074447f08f03c4b75ac2030dcd01201c0656c.jpg", Description: "Sneaker Maker", Quantity: 4, Price: 49.99, Currency: "NOK"},
+			{Name: "Cookie-Man Forrest", Image: "https://storage.googleapis.com/planetposen-images/2c47ed96b5e061d85f688849b998aa5e76c55c2a.jpg", Description: "Boots Brothers", Quantity: 3, Price: 99, Currency: "NOK"},
 			{Name: "Floral", Image: "https://planet.schleppe.cloud/email/items/item-3.jpg", Description: "Swiss Made", Quantity: 1, Price: 129, Currency: "NOK"},
 		},
 	}
 
-	var b bytes.Buffer
-	template := bufio.NewWriter(&b)
+	b := &bytes.Buffer{}
+	template := bufio.NewWriter(b)
 	err := tmpl.Execute(template, data)
 	if err != nil {
 		fmt.Println(err)
+		http.Error(response, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
 	response.Header().Set("Content-Type", "text/html")
