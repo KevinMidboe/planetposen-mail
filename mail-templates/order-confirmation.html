@@ -82,7 +82,11 @@
     }
 
     .btn:hover tbody tr td {
-      background-color:  red !important;
+      background-color:  white !important;
+      border-color: #18332F !important;
+    }
+    .btn:hover tbody tr td a {
+      color: #18332F !important;
     }
   </style>
   <!--<![endif]-->
@@ -98,38 +102,35 @@
   <tr>
     <!--[if mso]><td></td><![endif]-->
     <td class="body-content" style="font-size: 16px;font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;font-weight: normal;line-height: 1.45;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #373737;">
-      <h1 class="text-center fs-sm-20px" style="mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;margin: 32px;color: black;font-size: 24px;text-align: center;">{{.PageTitle}}</h1>
+      <h1 class="text-center fs-sm-20px" style="mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;margin: 24px 18px;color: black;font-size: 36px;text-align: center;">{{.PageTitle}}</h1>
 
       <table class="ms-t1 container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse: collapse;width: 100%;max-width: 680px;margin: 0 auto;">
         <tbody>
         <tr>
           <td class="container-content pt-sm-56px pb-sm-56px" style="background: #fff;padding: 0px;vertical-align: top;max-width: 680px;background-color: #fff;border-radius: 8px;padding-top: 56px;padding-bottom: 56px;">
-            <center><svg class="icon bi bi-shop shop-icon fs-sm-70px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" preserveAspectRatio="none" style="font-size: 86px;color: var(--primary); width: 80px;">
-              <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"></path>
-            </svg>
-              <h2 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 24px;line-height: 1.8;margin-top: 18px;margin-bottom: 56px;margin-left: 18px;margin-right: 18px;" class="fs-sm-20px"><strong>Thank You For Your Order,</strong><br><strong>David Smith</strong></h2>
+            <center>
               <table class="ms-t1 layout-table" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;width: 90%;">
                 <tbody>
                 <tr>
-                  <td style="color: #606060;font-size: 18px;padding-bottom: 25px;" class="fs-sm-16px">July 22, 2025</td>
-                  <td class="text-right fs-sm-16px" style="color: #606060;font-size: 18px;padding-bottom: 25px;text-align: right;">Order id: <strong>{{.OrderId}}</strong></td>
+                  <td style="color: #606060;font-size: 18px;padding-bottom: 25px;" class="fs-sm-16px">{{ .Date }}</td>
+                  <td class="text-right fs-sm-16px" style="color: #606060;font-size: 18px;padding-bottom: 25px;text-align: right;">Order id: <strong><a href="{{ .Site }}/receipt/{{.OrderId}}">{{.OrderId}}</a></strong></td>
                 </tr>
                 </tbody>
               </table>
               <table class="ms-t1 table" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;width: 100%;margin-bottom: 16px;">
                 <thead>
                 <tr style="background: ghostwhite;background-color: ghostwhite;">
-                  <th class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="4">ITEM</th>
-                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">QTY</th>
-                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">PRICE</th>
+                  <th class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="4">VARE</th>
+                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">ANTALL</th>
+                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">PRIS</th>
                 </tr>
                 </thead>
                 <tbody>
                 {{ range .Products }}
                 <tr>
-                  <td class="text-left" colspan="1" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-right: 0px;text-align: left;"><img class="w-sm-50px" src={{.Image}} style="width: 120px;" alt="Item 1" /></td>
-                  <td class="text-left" colspan="3" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-left: 0px;padding-right: 0px;text-align: left;">
-                    <h2 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 5px;"><strong>{{.Name}}</strong></h2><span style="color: #9a9a9a;font-size: 16px;">{{.Description}}</span>
+                  <td class="text-left" colspan="1" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-right: 0px;text-align: left;"><img class="w-sm-50px" src={{.Image}} style="width: 100%; max-width: 120px;" alt="Item 1" /></td>
+                  <td class="text-left" colspan="3" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-right: 0px;text-align: left;">
+                    <h2 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 500;font-size: 18px;margin-bottom: 5px;"><a href="{{ $.Site }}/shop/{{ .ProductNo }}" style="color: black;">{{.Name}}</strong></h2>
                   </td>
                   <td class="text-center" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 400;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: center;">{{.Quantity}}</td>
                   <td class="text-center" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 400;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: center;">{{.Currency}} {{.Price}}</td>
@@ -138,18 +139,18 @@
 
                 <!-- Tax & Total -->
                 <tr>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">TAX</td>
-                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: right;" colspan="3">$0.00</td>
+                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">Frakt</td>
+                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: right;" colspan="3">NOK 70</td>
                 </tr>
                 <tr>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">Total</td>
-                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;text-align: right;" colspan="3">$349.97</td>
+                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">Sum</td>
+                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;text-align: right;" colspan="3">NOK {{ .Sum }}</td>
                 </tr>
                 <!-- End tax & Total -->
 
                 <!-- Payment method & status -->
-                <tr style="background: ghostwhite;background-color: ghostwhite;text-transform: uppercase;">
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">payment method</td>
+<!--                 <tr style="background: ghostwhite;background-color: ghostwhite;text-transform: uppercase;">
+                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">Betaling</td>
                   <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="3">status</td>
                 </tr>
                 <tr>
@@ -158,27 +159,36 @@
                     <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">VISA (xxxxxxxxxxxx3422)&nbsp;<br>Valid Thru 11/2024</p>
                   </td>
                   <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;padding-bottom: 32px;text-align: left;" colspan="3">
+                    <p>re</p>
                     <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;"><strong>Paid on July 22, 2020</strong><br></h4>
                     <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">Created, shipment pending (<a href="#" style="text-decoration: none;color: #3535e4;">track</a>)</p>
                   </td>
-                </tr>
+                </tr> -->
                 <!-- End payment method & status -->
 
                 <!-- Shipping -->
                 <tr style="background: ghostwhite;background-color: ghostwhite;text-transform: uppercase;">
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">shipping address</td>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="3">shipping method</td>
+                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">leveringsadresse</td>
+                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="3">frakt</td>
                 </tr>
                 <tr>
                   <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;width: 50%;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.6;"><strong>David Smith</strong><br>1234 Street Name<br>City, State 12345<br>(123) 555-32234</p>
+                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.6;"><strong>{{ .Customer.FirstName }} {{ .Customer.LastName }}</strong><br>{{ .Customer.StreetAddress }}<br>{{ .Customer.City }}, {{ .Customer.ZipCode }}</p>
                   </td>
                   <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;"><strong>Express Shipping</strong><br></h4>
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">4-7 dager</p>
+                    <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;">Sendes med Posten BRING<br></h4>
+                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">4-8 dager</p>
                   </td>
                 </tr>
                 <!-- End shipping -->
+                </tbody>
+              </table>
+
+              <table style="margin-bottom: 3rem">
+                <tbody>
+                  <tr>
+                    <td>Du vil motta en ny epost med sporingsnummer når din ordre blir sent.</td>
+                  </tr>
                 </tbody>
               </table>
 
@@ -186,7 +196,7 @@
               <table class="ms-t1 btn btn-primary btn-lg btn-pill" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse: separate;">
                 <tbody>
                 <tr>
-                  <td class="btn-content" style="background: #3535e4;border: none;cursor: pointer;text-align: center;vertical-align: middle;font-weight: 800;background-color: #3535e4;border-radius: 100px;padding: 18px 40px;"><a href="#" style="text-decoration: none;color: #fff;font-size: 125%;">View My Order</a></td>
+                  <td class="btn-content" style="background: #18332F;border: 2px solid transparent;cursor: pointer;text-align: center;vertical-align: middle;font-weight: 800;background-color: #18332F;border-radius: 100px;"><a href="{{ .Site }}/orders/{{ .OrderId }}" style="padding: 18px 40px;display:block;text-decoration: none;color: #fff;font-size: 125%;">Se din ordre her</a></td>
                 </tr>
                 </tbody>
               </table>
@@ -197,7 +207,7 @@
         </tbody>
       </table>
       <div class="text-center" style="color: #323233;text-align: center;">
-        <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.5;margin-top: 50px;margin-bottom: 25px;"><a href="https://planetposen.no">planetposen.no</a></p>
+        <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.5;margin-top: 50px;margin-bottom: 25px;"><a href="{{ .Site }}">{{ .Site }}</a></p>
       </div>
     </td><!--[if mso]>
     <td></td> <![endif]--></tr>
