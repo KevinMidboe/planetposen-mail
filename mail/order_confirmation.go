@@ -63,7 +63,7 @@ type Record struct {
 
 func OrderConfirmation(payload OrderConfirmationData) (*OrderConfirmationEmailData, error) {
 	var emailTemplate EmailTemplateData
-	emailTemplate.PageTitle = "Ordrebekreftelse fra planetposen.no"
+	emailTemplate.PageTitle = "Takk for din bestilling!"
 	emailTemplate.Site = "https://planet.schleppe.cloud"
 	emailTemplate.Date = time.Now().Format("2006-01-02")
 	emailTemplate.Sum = payload.Sum

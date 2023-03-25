@@ -66,19 +66,19 @@
     }
 
     body {
-      background: #f1f1f2;
       margin: 0 auto;
       padding: 0;
       width: 100%;
       height: 100%;
-      background-color: #f1f1f2;
+      background: white;
+      background-color: white;
     }
 
     body > table {
-      background: #f1f1f2;
       border-collapse: collapse;
       color: #373737;
-      background-color: #f1f1f2;
+      background: white;
+      background-color: white;
     }
 
     .btn:hover tbody tr td {
@@ -87,6 +87,13 @@
     }
     .btn:hover tbody tr td a {
       color: #18332F !important;
+    }
+
+    @media only screen 
+      and (max-width : 480px) {
+      .desktop-only {
+        display: none;
+      }
     }
   </style>
   <!--<![endif]-->
@@ -102,105 +109,849 @@
   <tr>
     <!--[if mso]><td></td><![endif]-->
     <td class="body-content" style="font-size: 16px;font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;font-weight: normal;line-height: 1.45;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #373737;">
-      <h1 class="text-center fs-sm-20px" style="mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;margin: 24px 18px;color: black;font-size: 36px;text-align: center;">{{.PageTitle}}</h1>
-
       <table class="ms-t1 container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse: collapse;width: 100%;max-width: 680px;margin: 0 auto;">
         <tbody>
         <tr>
-          <td class="container-content pt-sm-56px pb-sm-56px" style="background: #fff;padding: 0px;vertical-align: top;max-width: 680px;background-color: #fff;border-radius: 8px;padding-top: 56px;padding-bottom: 56px;">
+          <td class="container-content pt-sm-56px pb-sm-56px" style="background: #fff;padding: 0px;vertical-align: top;max-width: 600px;background-color: #fff;border-radius: 8px;padding-top: 56px;padding-bottom: 56px;">
             <center>
-              <table class="ms-t1 layout-table" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;width: 90%;">
-                <tbody>
-                <tr>
-                  <td style="color: #606060;font-size: 18px;padding-bottom: 25px;" class="fs-sm-16px">{{ .Date }}</td>
-                  <td class="text-right fs-sm-16px" style="color: #606060;font-size: 18px;padding-bottom: 25px;text-align: right;">Order id: <strong><a href="{{ .Site }}/receipt/{{.OrderId}}">{{.OrderId}}</a></strong></td>
-                </tr>
-                </tbody>
-              </table>
-              <table class="ms-t1 table" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;width: 100%;margin-bottom: 16px;">
-                <thead>
-                <tr style="background: ghostwhite;background-color: ghostwhite;">
-                  <th class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="4">VARE</th>
-                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">ANTALL</th>
-                  <th style="border-top: 1px solid #e9e9e9;padding: 20px 30px;vertical-align: bottom;border-bottom: 2px solid #e9e9e9;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">PRIS</th>
-                </tr>
-                </thead>
-                <tbody>
-                {{ range .Products }}
-                <tr>
-                  <td class="text-left" colspan="1" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-right: 0px;text-align: left;"><img class="w-sm-50px" src={{.Image}} style="width: 100%; max-width: 120px;" alt="Item 1" /></td>
-                  <td class="text-left" colspan="3" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;padding-right: 0px;text-align: left;">
-                    <h2 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 500;font-size: 18px;margin-bottom: 5px;"><a href="{{ $.Site }}/shop/{{ .ProductNo }}" style="color: black;">{{.Name}}</strong></h2>
-                  </td>
-                  <td class="text-center" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 400;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: center;">{{.Quantity}}</td>
-                  <td class="text-center" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 400;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: center;">{{.Currency}} {{.Price}}</td>
-                </tr>
-                {{ end }}
 
-                <!-- Tax & Total -->
-                <tr>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">Frakt</td>
-                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: right;" colspan="3">NOK 75</td>
-                </tr>
-                <tr>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;padding-right: 0px;text-align: left;" colspan="3">Sum</td>
-                  <td class="text-right" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 18px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;text-align: right;" colspan="3">NOK {{ .Sum }}</td>
-                </tr>
-                <!-- End tax & Total -->
-
-                <!-- Payment method & status -->
-<!--                 <tr style="background: ghostwhite;background-color: ghostwhite;text-transform: uppercase;">
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">Betaling</td>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="3">status</td>
-                </tr>
-                <tr>
-                  <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;width: 50%;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;">Credit/Debit Card<br></h4>
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">VISA (xxxxxxxxxxxx3422)&nbsp;<br>Valid Thru 11/2024</p>
-                  </td>
-                  <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <p>re</p>
-                    <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;"><strong>Paid on July 22, 2020</strong><br></h4>
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">Created, shipment pending (<a href="#" style="text-decoration: none;color: #3535e4;">track</a>)</p>
-                  </td>
-                </tr> -->
-                <!-- End payment method & status -->
-
-                <!-- Shipping -->
-                <tr style="background: ghostwhite;background-color: ghostwhite;text-transform: uppercase;">
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width: 50%;text-align: left;" colspan="3">leveringsadresse</td>
-                  <td class="text-left" style="vertical-align: middle;border-top: 1px solid #e9e9e9;padding: 20px 30px;font-weight: 700;font-size: 14px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;text-align: left;" colspan="3">frakt</td>
-                </tr>
-                <tr>
-                  <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;width: 50%;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.6;"><strong>{{ .Customer.FirstName }} {{ .Customer.LastName }}</strong><br>{{ .Customer.StreetAddress }}<br>{{ .Customer.City }}, {{ .Customer.ZipCode }}</p>
-                  </td>
-                  <td class="text-left" style="border-top: 1px solid #e9e9e9;padding: 20px 30px;font-size: 16px;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: #5b5959;vertical-align: top;padding-bottom: 32px;text-align: left;" colspan="3">
-                    <h4 style="margin: 0 0 10px 0;mso-line-height-rule: exactly;font-family: &quot;Open Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-weight: 700;font-size: 16px;line-height: 1.8;margin-bottom: 0px;">Sendes med Posten BRING<br></h4>
-                    <p style="margin: 0 0 10px 0;mso-line-height-rule: exactly;line-height: 1.8;">4-8 dager</p>
-                  </td>
-                </tr>
-                <!-- End shipping -->
-                </tbody>
-              </table>
-
-              <table style="margin-bottom: 3rem">
+              <!-- HEADER -->
+              <table style="border-collapse: collapse; table-layout: fixed; width: 100%;">
                 <tbody>
                   <tr>
-                    <td>Du vil motta en ny epost med sporingsnummer når din ordre blir sent.</td>
+                    <td style="border-collapse: collapse; table-layout: fixed; color:#000; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 16px; line-height:130%; letter-spacing:-0.01em; max-width:100%; word-wrap:break-word; font-weight:400; padding:9px 18px 36px">
+                      <h1 style="color:#000!important;display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif!important;font-size:56px!important;font-style:normal;font-weight:700!important;line-height:92%!important;letter-spacing:-0.045em!important;margin:0 0 36px" align="left">{{ .PageTitle }}</h1>
+
+                      <p style="padding-bottom:0;max-width:25em;margin:0">Hi {{ .Customer.FirstName }}, we're getting your order ready to be shipped. We will notify you when it has been sent. Orders for in-stock items typically ship within 2-3 Business Days. We appreciate your patience and understanding!</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- HEADER END -->
+
+              <!-- ORDER -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                <tbody>
+                  <tr>
+                    <td style="border-collapse: collapse; table-layout: fixed; padding: 48px 0px 18px;" valign="top">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; table-layout: fixed; border: 18px solid #f1f1f1;" width="100%" bgcolor="#F1F1F1">
+                        <thead>
+                          <tr>
+                            <th
+                              style="
+                                width: 28%;
+                                max-width: 120px;
+                                font-weight: 500 !important;
+                                color: #787878 !important;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                font-size: 13px !important;
+                                line-height: 100% !important;
+                                letter-spacing: 0.015em !important;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                text-transform: uppercase !important;
+                                padding: 8px 9px 42px;
+                              "
+                              valign="top"
+                              align="left"
+                            >
+                              Ordre ID
+                            </th>
+                            <th
+                              style="
+                                font-weight: 500 !important;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                font-size: 13px !important;
+                                line-height: 100% !important;
+                                letter-spacing: 0.015em !important;
+                                max-width: 100%;
+                                text-transform: uppercase !important;
+                                padding: 8px 9px 42px;
+                              "
+                              valign="top"
+                              align="left"
+                            >
+                              <a style="color: black !important;" href="{{.Site}}/receipt/{{.OrderId}}">
+                                {{.OrderId}}
+                              </a>
+                            </th>
+                            <th
+                              style="
+                                font-weight: 500 !important;
+                                color: #787878 !important;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                font-size: 10px !important;
+                                line-height: 100% !important;
+                                letter-spacing: 0.015em !important;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                text-transform: uppercase !important;
+                                padding: 8px 9px 42px;
+                              "
+                              valign="top"
+                              align="right"
+                            ></th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+
+                          <!-- PRODUCT LIST -->
+
+                          {{ range .Products }}
+                          <tr>
+                            <td
+                              style="
+                                width: 20%;
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="left"
+                            >
+                              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                                <tbody>
+                                  <tr>
+                                    <td style="border-collapse: collapse; table-layout: fixed; font-size: 0; padding: 0;" valign="top">
+                                      <img
+                                        align="left"
+                                        alt="line.title"
+                                        src="{{.Image}}"
+                                        style="
+                                          max-width: 200px;
+                                          height: auto;
+                                          line-height: 100%;
+                                          outline: none;
+                                          text-decoration: none;
+                                          margin-right: 0;
+                                          padding-bottom: 0;
+                                          display: inline !important;
+                                          vertical-align: top;
+                                          font-size: 12px;
+                                          width: 100%;
+                                          border-width: 0;
+                                        "
+                                        width="120"
+                                        data-bit="iit"
+                                      />
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                            <td
+                              style="
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="left"
+                            >
+                            <p style="padding-bottom: 0; max-width: 25em; margin: 0;">{{ .Name }}</p>
+                            </td>
+                            <td
+                              style="
+                                border-right-style: none !important;
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="right"
+                            >
+                            <p style="padding-bottom: 0; font-size: 14px; white-space: nowrap; max-width: 25em; margin: 0;"><span style="color: #787878;">{{ .Currency }} {{ .Price }}</span></p>
+                            </td>
+                          </tr>
+                          {{ end }}
+
+                          <!-- PRODUCT LIST END -->
+
+                          <!-- SUMMARY -->
+                          <tr>
+                            <td
+                              style="
+                                width: 20%;
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-bottom-style: none !important;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="left"
+                            ></td>
+                            <td
+                              style="
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-bottom-style: none !important;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="left"
+                            >
+                              <p style="color: #787878; font-size: 14px !important; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>Subtotal</span></p>
+                              <p style="color: #787878; font-size: 14px !important; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>VAT</span></p>
+                              <p style="color: #787878; font-size: 14px !important; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>Shipping</span></p>
+                              <p style="padding-bottom: 0; font-size: 14px; max-width: 25em; margin: 0.5em 0 0;"><span>Total</span></p>
+                            </td>
+                            <td
+                              style="
+                                border-right-style: none !important;
+                                border-top-style: solid;
+                                border-top-color: #cfcfcf;
+                                border-top-width: 1px;
+                                border-bottom-style: none !important;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                color: #000;
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                max-width: 100%;
+                                word-wrap: break-word;
+                                font-weight: 400;
+                                padding: 18px 9px;
+                              "
+                              valign="middle"
+                              align="right"
+                            >
+                              <p style="color: #787878; font-size: 14px !important; white-space: nowrap; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>$239.00</span></p>
+                              <p style="color: #787878; font-size: 14px !important; white-space: nowrap; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>$14.94</span></p>
+                              <p style="color: #787878; font-size: 14px !important; white-space: nowrap; padding-bottom: 2px; max-width: 25em; margin: 0;"><span>$10.00</span></p>
+                              <p style="padding-bottom: 0; font-size: 14px; white-space: nowrap; max-width: 25em; margin: 0.5em 0 0;"><span>NOK {{ .Sum }}</span></p>
+                            </td>
+                          </tr>
+
+                          <!-- SUMMARY END -->
+                        </tbody>
+                      </table>
+                    </td>
                   </tr>
                 </tbody>
               </table>
 
-              <!-- View order button -->
-              <table class="ms-t1 btn btn-primary btn-lg btn-pill" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse: separate;">
+              <!-- ORDER END -->
+
+              <!-- CTA BUTTONS -->
+              <table border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532templateRow" width="100%" style="border-collapse: collapse; table-layout: fixed;">
                 <tbody>
-                <tr>
-                  <td class="btn-content" style="background: #18332F;border: 2px solid transparent;cursor: pointer;text-align: center;vertical-align: middle;font-weight: 800;background-color: #18332F;border-radius: 100px;"><a href="{{ .Site }}/orders/{{ .OrderId }}" style="padding: 18px 40px;display:block;text-decoration: none;color: #fff;font-size: 125%;">Se din ordre her</a></td>
-                </tr>
+                  <tr>
+                    <td class="m_-3111449952067130532rowContainer m_-3111449952067130532kmFloatLeft m_-3111449952067130532firstColumn" valign="top" width="33%" style="border-collapse: collapse; table-layout: fixed;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="width: 100% !important; border-collapse: collapse; table-layout: fixed;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="center" class="m_-3111449952067130532kmButtonBlockInner" style="border-collapse: collapse; table-layout: fixed; min-width: 60px; padding: 9px 18px;" valign="top">
+                              <table
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                style="
+                                  border-radius: 0 !important;
+                                  min-width: 100%;
+                                  border-collapse: separate;
+                                  table-layout: fixed;
+                                  border-top-left-radius: 5px;
+                                  border-top-right-radius: 5px;
+                                  border-bottom-right-radius: 5px;
+                                  border-bottom-left-radius: 5px;
+                                  border: 1px solid #000;
+                                "
+                                width="100%"
+                                bgcolor="#000000"
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 14px; color: #ffffff; letter-spacing: 0px; font-weight: bold; font-family: 'Helvetica Neue', Arial; border-collapse: collapse; table-layout: fixed;" valign="middle">
+                                      <a
+                                        href="{{ .Site }}/orders/{{ .OrderId }}"
+                                        style="
+                                          text-decoration: none;
+                                          color: inherit !important;
+                                          display: inline-block;
+                                          width: 100%;
+                                          padding-top: 24px !important;
+                                          padding-bottom: 24px !important;
+                                          font-size: 14px !important;
+                                          letter-spacing: -0.015em !important;
+                                          font-weight: 500 !important;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                          word-wrap: break-word !important;
+                                          max-width: 100%;
+                                          line-height: 100% !important;
+                                          text-align: center;
+                                          text-transform: uppercase !important;
+                                        "
+                                        title=""
+                                        target="_blank"
+                                      >
+                                        View Order
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td class="m_-3111449952067130532rowContainer m_-3111449952067130532kmFloatLeft" valign="top" width="33%" style="border-collapse: collapse; table-layout: fixed;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="width: 100% !important; border-collapse: collapse; table-layout: fixed;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="center" class="m_-3111449952067130532kmButtonBlockInner" style="border-collapse: collapse; table-layout: fixed; min-width: 60px; padding: 9px 18px;" valign="top">
+                              <table
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                style="
+                                  border-radius: 0 !important;
+                                  min-width: 100%;
+                                  border-collapse: separate;
+                                  table-layout: fixed;
+                                  border-top-left-radius: 5px;
+                                  border-top-right-radius: 5px;
+                                  border-bottom-right-radius: 5px;
+                                  border-bottom-left-radius: 5px;
+                                  border: 1px solid #000000;
+                                "
+                                width="100%"
+                                bgcolor="#FFFFFF"
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 14px; color: #000; letter-spacing: 0px; font-weight: bold; font-family: 'Helvetica Neue', Arial; border-collapse: collapse; table-layout: fixed;" valign="middle">
+                                      <a
+                                        href="{{ .Site }}/shop"
+                                        style="
+                                          text-decoration: none;
+                                          color: inherit !important;
+                                          display: inline-block;
+                                          width: 100%;
+                                          padding-top: 24px !important;
+                                          padding-bottom: 24px !important;
+                                          font-size: 14px !important;
+                                          letter-spacing: -0.015em !important;
+                                          font-weight: 500 !important;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                          word-wrap: break-word !important;
+                                          max-width: 100%;
+                                          line-height: 100% !important;
+                                          text-align: center;
+                                          text-transform: uppercase !important;
+                                        "
+                                        title=""
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://shop.a24films.com/&amp;source=gmail&amp;ust=1679859662703000&amp;usg=AOvVaw3X1HNjmEJnXgUTyGEMDjR3"
+                                      >
+                                        Visit The Shop
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td class="desktop-only" valign="top" width="33%" style="border-collapse: collapse; table-layout: fixed;"></td>
+                  </tr>
                 </tbody>
               </table>
-              <!-- End view order button -->
+
+            <!-- CTA BUTTONS END -->
+
+
+            <!-- SHIPPING -->
+            <table border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532templateRow" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+              <tbody>
+                <tr>
+                  <td class="m_-3111449952067130532rowContainer m_-3111449952067130532kmFloatLeft m_-3111449952067130532firstColumn" valign="top" width="50%" style="border-collapse: collapse; table-layout: fixed;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                      <tbody>
+                        <tr>
+                          <td class="m_-3111449952067130532kmTextBlockInner" style="padding-top: 18px; padding-bottom: 18px; border-collapse: collapse; table-layout: fixed;" valign="top">
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532kmTextContentContainer" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    class="m_-3111449952067130532kmTextContent"
+                                    style="
+                                      border-collapse: collapse;
+                                      table-layout: fixed;
+                                      color: #000;
+                                      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 130%;
+                                      letter-spacing: -0.01em;
+                                      max-width: 100%;
+                                      word-wrap: break-word;
+                                      font-weight: 400;
+                                      padding: 9px 18px;
+                                    "
+                                    valign="top"
+                                    align="left"
+                                  >
+                                    <h4
+                                      style="
+                                        font-weight: 500 !important;
+                                        color: #787878 !important;
+                                        display: block;
+                                        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                        font-size: 12px !important;
+                                        font-style: normal;
+                                        line-height: 100% !important;
+                                        letter-spacing: 0.015em !important;
+                                        text-transform: uppercase !important;
+                                        max-width: 40em;
+                                        margin: 0 0 1em;
+                                      "
+                                      align="left"
+                                    >
+                                      Billing Address:
+                                    </h4>
+                                    <p style="padding-bottom: 0; color: #787878; max-width: 25em; margin: 0;">
+                                      {{ .Customer.FirstName }} {{ .Customer.LastName }}<br />
+                                      {{ .Customer.StreetAddress }}<br />
+                                      {{ .Customer.City }}, {{ .Customer.ZipCode }}<br />
+                                      Norway
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td class="m_-3111449952067130532rowContainer m_-3111449952067130532kmFloatLeft m_-3111449952067130532lastColumn" valign="top" width="50%" style="border-collapse: collapse; table-layout: fixed;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                      <tbody>
+                        <tr>
+                          <td class="m_-3111449952067130532kmTextBlockInner" style="padding-top: 18px; padding-bottom: 18px; border-collapse: collapse; table-layout: fixed;" valign="top">
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532kmTextContentContainer" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    class="m_-3111449952067130532kmTextContent"
+                                    style="
+                                      border-collapse: collapse;
+                                      table-layout: fixed;
+                                      color: #000;
+                                      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 130%;
+                                      letter-spacing: -0.01em;
+                                      max-width: 100%;
+                                      word-wrap: break-word;
+                                      font-weight: 400;
+                                      padding: 9px 18px;
+                                    "
+                                    valign="top"
+                                    align="left"
+                                  >
+                                    <h4
+                                      style="
+                                        font-weight: 500 !important;
+                                        color: #787878 !important;
+                                        display: block;
+                                        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                        font-size: 12px !important;
+                                        font-style: normal;
+                                        line-height: 100% !important;
+                                        letter-spacing: 0.015em !important;
+                                        text-transform: uppercase !important;
+                                        max-width: 40em;
+                                        margin: 0 0 1em;
+                                      "
+                                      align="left"
+                                    >
+                                      Shipping Address:
+                                    </h4>
+                                    <p style="padding-bottom: 0; color: #787878; max-width: 25em; margin: 0;">
+                                      {{ .Customer.FirstName }} {{ .Customer.LastName }}<br />
+                                      {{ .Customer.StreetAddress }}<br />
+                                      {{ .Customer.City }}, {{ .Customer.ZipCode }}<br />
+                                      Norway
+                                   </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- SHIPPING END -->
+
+            <!-- CONTACT INFO -->
+            <tr>
+              <td align="center" valign="top" style="border-collapse: collapse; table-layout: fixed;">
+                <table border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532templateRow" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                  <tbody>
+                    <tr>
+                      <td class="m_-3111449952067130532rowContainer m_-3111449952067130532kmFloatLeft" valign="top" style="border-collapse: collapse; table-layout: fixed;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                          <tbody>
+                            <tr>
+                              <td style="border-collapse: collapse; table-layout: fixed; padding: 18px;">
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-top-width: 1px; border-top-style: solid; border-top-color: #c2c2c2; border-collapse: collapse; table-layout: fixed;" width="100%">
+                                  <tbody>
+                                    <tr>
+                                      <td style="border-collapse: collapse; table-layout: fixed;"><span></span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                          <tbody>
+                            <tr>
+                              <td class="m_-3111449952067130532kmTextBlockInner" style="border-collapse: collapse; table-layout: fixed;" valign="top">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532kmTextContentContainer" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        class="m_-3111449952067130532kmTextContent"
+                                        style="
+                                          color: #787878;
+                                          border-collapse: collapse;
+                                          table-layout: fixed;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                          font-size: 16px;
+                                          line-height: 130%;
+                                          letter-spacing: -0.01em;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          font-weight: 400;
+                                          padding: 36px 18px 18px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      >
+                                        <p style="padding-bottom: 0; max-width: 25em; margin: 0;">
+                                          If you have any questions, reply to this email or contact us at
+                                          <a href="mailto:post@planetposen.no" style="text-decoration: underline; color: inherit !important; font-weight: normal; word-wrap: break-word !important; max-width: 100%;" target="_blank">post@planetposen.no</a>
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" class="m_-3111449952067130532kmTableBlock" width="100%" style="border-collapse: collapse; table-layout: fixed;">
+                          <tbody>
+                            <tr>
+                              <td class="m_-3111449952067130532kmTableBlockInner" style="border-collapse: collapse; table-layout: fixed; padding: 48px 18px 9px;" valign="top">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="color: #b3b3b3; border-collapse: collapse; table-layout: fixed;" width="100%">
+                                  <thead>
+                                    <tr>
+                                      <th
+                                        class="m_-3111449952067130532kmTextContent"
+                                        style="
+                                          font-weight: 500 !important;
+                                          color: #787878 !important;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                          font-size: 10px !important;
+                                          line-height: 100% !important;
+                                          letter-spacing: 0.015em !important;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          text-transform: uppercase !important;
+                                          padding: 0px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      ></th>
+                                      <th
+                                        class="m_-3111449952067130532kmTextContent m_-3111449952067130532kmDesktopOnly"
+                                        style="
+                                          font-weight: 500 !important;
+                                          color: #787878 !important;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                          font-size: 10px !important;
+                                          line-height: 100% !important;
+                                          letter-spacing: 0.015em !important;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          text-transform: uppercase !important;
+                                          padding: 0px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      ></th>
+                                      <th
+                                        class="m_-3111449952067130532kmTextContent"
+                                        style="
+                                          font-weight: 500 !important;
+                                          color: #787878 !important;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                          font-size: 10px !important;
+                                          line-height: 100% !important;
+                                          letter-spacing: 0.015em !important;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          text-transform: uppercase !important;
+                                          padding: 0px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      ></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        class="m_-3111449952067130532kmTextContent"
+                                        style="
+                                          color: #b3b3b3;
+                                          border-top-style: solid;
+                                          border-top-color: #c2c2c2;
+                                          border-top-width: 1px;
+                                          border-bottom-style: none !important;
+                                          border-collapse: collapse;
+                                          table-layout: fixed;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                          font-size: 16px;
+                                          line-height: 130%;
+                                          letter-spacing: -0.01em;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          font-weight: 400;
+                                          padding: 4px 0px 36px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      >
+                                        <div style="color: #b3b3b3 !important; text-decoration: none !important;">
+                                          <h4
+                                            style="
+                                              color: #b3b3b3 !important;
+                                              line-height: 1.05 !important;
+                                              display: block;
+                                              font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                              font-size: 12px !important;
+                                              font-style: normal;
+                                              font-weight: 400 !important;
+                                              letter-spacing: 0.015em !important;
+                                              text-transform: uppercase !important;
+                                              max-width: 40em;
+                                              text-decoration: none !important;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                          >
+                                            <a
+                                              href="{{ .Site }}"
+                                              style="text-decoration: none !important; color: #b3b3b3 !important; font-weight: normal; word-wrap: break-word !important; max-width: 100%;"
+                                              target="_blank"
+                                            >
+                                              <span style="background: #fde293; color: #222;">Planetposen</span>
+                                            </a>
+                                          </h4>
+                                        </div>
+                                      </td>
+                                      <td
+                                        class="m_-3111449952067130532kmTextContent m_-3111449952067130532kmDesktopOnly"
+                                        style="
+                                          color: #b3b3b3;
+                                          border-top-style: solid;
+                                          border-top-color: #c2c2c2;
+                                          border-top-width: 1px;
+                                          border-bottom-style: none !important;
+                                          border-collapse: collapse;
+                                          table-layout: fixed;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                          font-size: 16px;
+                                          line-height: 130%;
+                                          letter-spacing: -0.01em;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          font-weight: 400;
+                                          padding: 4px 0px 36px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      >
+                                        <div style="color: #b3b3b3 !important; text-decoration: none !important;">
+                                          <h4
+                                            style="
+                                              color: #b3b3b3 !important;
+                                              line-height: 1.05 !important;
+                                              display: block;
+                                              font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                              font-size: 12px !important;
+                                              font-style: normal;
+                                              font-weight: 400 !important;
+                                              letter-spacing: 0.015em !important;
+                                              text-transform: uppercase !important;
+                                              max-width: 40em;
+                                              text-decoration: none !important;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                          >
+                                            31 W 27TH ST<br />
+                                            NEW YORK<br />
+                                            NY 10001
+                                          </h4>
+                                        </div>
+                                      </td>
+                                      <td
+                                        class="m_-3111449952067130532kmTextContent"
+                                        style="
+                                          border-right-style: none !important;
+                                          color: #b3b3b3;
+                                          border-top-style: solid;
+                                          border-top-color: #c2c2c2;
+                                          border-top-width: 1px;
+                                          border-bottom-style: none !important;
+                                          border-collapse: collapse;
+                                          table-layout: fixed;
+                                          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                          font-size: 16px;
+                                          line-height: 130%;
+                                          letter-spacing: -0.01em;
+                                          max-width: 100%;
+                                          word-wrap: break-word;
+                                          font-weight: 400;
+                                          padding: 4px 0 36px;
+                                        "
+                                        valign="top"
+                                        align="left"
+                                      >
+                                        <div style="color: #b3b3b3 !important; text-decoration: none !important;">
+                                          <h4
+                                            style="
+                                              color: #b3b3b3 !important;
+                                              line-height: 1.05 !important;
+                                              display: block;
+                                              font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                                              font-size: 12px !important;
+                                              font-style: normal;
+                                              font-weight: 400 !important;
+                                              letter-spacing: 0.015em !important;
+                                              text-transform: uppercase !important;
+                                              max-width: 40em;
+                                              text-decoration: none !important;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                          >
+                                            <a
+                                              href="https://twitter.com/A24"
+                                              style="text-decoration: none !important; color: #b3b3b3 !important; font-weight: normal; word-wrap: break-word !important; max-width: 100%;"
+                                              target="_blank"
+                                              data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/A24&amp;source=gmail&amp;ust=1679859662704000&amp;usg=AOvVaw23tAicyUERhGbak16iROfd"
+                                            >
+                                              TWITTER
+                                            </a>
+                                            <br />
+                                            <a
+                                              href="https://www.facebook.com/A24"
+                                              style="text-decoration: none !important; color: #b3b3b3 !important; font-weight: normal; word-wrap: break-word !important; max-width: 100%;"
+                                              target="_blank"
+                                              data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/A24&amp;source=gmail&amp;ust=1679859662704000&amp;usg=AOvVaw2vOXM76hqCfycttkkeWB9N"
+                                            >
+                                              FACEBOOK
+                                            </a>
+                                            <br />
+                                            <a
+                                              href="https://instagram.com/a24"
+                                              style="text-decoration: none !important; color: #b3b3b3 !important; font-weight: normal; word-wrap: break-word !important; max-width: 100%;"
+                                              target="_blank"
+                                              data-saferedirecturl="https://www.google.com/url?q=https://instagram.com/a24&amp;source=gmail&amp;ust=1679859662704000&amp;usg=AOvVaw3Rcz8SZQtprc0nowS-QJTR"
+                                            >
+                                              INSTAGRAM
+                                            </a>
+                                          </h4>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CONTACT INFO END -->
+
             </center>
           </td>
         </tr>
