@@ -10,7 +10,7 @@ RUN make build
 # RUN make test
 
 # Create production image for application with needed files
-FROM golang:1.19-alpine
+FROM golang:1.26rc2-alpine
 
 EXPOSE 8000
 
